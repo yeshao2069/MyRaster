@@ -144,6 +144,7 @@ export class Camera {
     }
 
     public perspective(): Matrix44 {
+        // 切换perspective分支查看透视投影实现
         return new Matrix44([
             [1, 0, 0, 0],
             [0, 1, 0, 0],
@@ -161,7 +162,7 @@ export class Camera {
         if (this.projectType == ProjectType.Orthogonal) {
             return this.orthogonal()
         } else {
-            return this.orthogonal().multiply(this.perspective())
+            return this.perspective()
         }
     }
 
